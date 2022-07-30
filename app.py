@@ -16,7 +16,8 @@ app.config['SECRET_KEY'] = 'your secret key'
 
 # Setting up Database
 basedir = os.path.abspath(os.path.dirname(__file__))
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'database.db')
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'database.db')
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://eyncxcgfnsjqem:1d9ed40c6fcb8eb045d2eb4e6222f4f1c14bd9a6d3b15afec11eb180c1e16998@ec2-100-26-39-41.compute-1.amazonaws.com:5432/d9miu2jk1hm3f2'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 
