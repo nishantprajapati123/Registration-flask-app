@@ -1,0 +1,34 @@
+{% extends "base.html" %} {% block form_content %}
+
+<div class="form__form-content-box">
+  <form id="registration_form" action="/register" method="POST">
+    {{ form.csrf_token() }}
+    <div class="form-group">
+      {{ form.name.label(class = "form__input-label") }} {{
+      form.name(placeholder="Full name", class="form-control form__input-box",
+      value="") }}
+    </div>
+    <div class="form-group">
+      {{ form.email.label(class = "form__input-label") }} {{
+      form.email(placeholder="Email address", class="form-control
+      form__input-box", value="") }}
+    </div>
+    <div class="form-group">
+      {{ form.phone.label(class = "form__input-label") }} {{
+      form.phone(placeholder="Phone number", class="form-control
+      form__input-box", value="") }}
+    </div>
+
+    <button type="submit" id="submit" class="btn btn-primary">Submit</button>
+    {% if errorMessage != undefined %} {% if errorMessage == "" %}
+    <div class="alert alert-success form__form-alert" role="alert">
+      Registration has successfully completed !
+    </div>
+    {% else %}
+    <div class="alert alert-danger form__form-alert" role="alert">
+      {{errorMessage}}
+    </div>
+    {% endif %} {% endif %}
+  </form>
+</div>
+{% endblock form_content%}

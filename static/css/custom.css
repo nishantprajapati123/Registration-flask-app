@@ -1,0 +1,24 @@
+body {
+  background-color: #e5ffff;
+}
+
+.form__input-box {
+  width: 60%;
+}
+
+.form__input-label {
+  font-weight: bold;
+}
+
+.form__form-alert {
+  margin-top: 1rem;
+}
+
+.form__form-content-box {
+  border: 2px black solid;
+  margin: auto;
+  width: 50%;
+  padding: 5rem;
+  background-color: rgb(187, 222, 251);
+  margin-top: 10rem;
+}

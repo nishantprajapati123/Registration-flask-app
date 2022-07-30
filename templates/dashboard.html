@@ -1,0 +1,31 @@
+{% extends "base.html" %} {% block dashboard_content %}
+
+<div class="row">
+  <div class="col-lg-8">
+    <table class="table">
+      <thead>
+        <tr>
+          <!-- <th scope="col">#</th> -->
+          <th scope="col">Name</th>
+          <th scope="col">Email Id</th>
+          <th scope="col">Phone number</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for user in users %}
+        <tr>
+          <td>{{ user.fullname }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.phone }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <div class="col-lg-4">
+    Total number of user has been registered
+    <p>{{ count }}</p>
+  </div>
+</div>
+
+{% endblock dashboard_content%}
