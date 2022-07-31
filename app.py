@@ -40,8 +40,7 @@ def send_email(name, recipients):
 def init_db():
     db.init_app(app)
     db.app = app
-    with app.app_context():
-        db.create_all()
+    db.create_all()
 
 @app.route("/")
 def home():
@@ -89,6 +88,8 @@ def register():
     else:
         return render_template("form.html", form=registration_form)
 
+#initializing outside
+init_db()
+
 if __name__ == "__main__":
-    init_db()
-    app.run(debug=True)
+    app.run()
